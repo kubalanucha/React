@@ -1,17 +1,11 @@
 @import '../../styles/settings.scss';
 
-.columnForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+label {
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
-.padding {
-  padding: 10px;
-}
-
-@media all and (max-width: 690px) {
-  .columnForm {
-    flex-direction: column;
-  }
+input {
+  padding: 12px;
+  border-radius: 5px;
 }

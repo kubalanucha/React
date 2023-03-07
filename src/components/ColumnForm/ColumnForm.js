@@ -1,14 +1,19 @@
 import styles from './ColumnForm.module.scss';
 import { useState } from 'react';
 import Button from '../Button/Button';
+
 import TextInput from '../TextInput/TextInput';
-const ColumnForm = (props) => {
+// import { useParams } from 'react-router';
+
+const ColumnForm = ({ listId }) => {
   const [title, setTitle] = useState('');
   const [icon, setIcon] = useState('');
-  //const [tittle, setValue] = useState('');
+
+  // const { listId } = useParams();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.action({ title: title, icon: icon });
+
     setTitle('');
     setIcon('');
   };
