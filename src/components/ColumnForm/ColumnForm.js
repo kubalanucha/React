@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 // import { useParams } from 'react-router';
 
-const ColumnForm = ({ listId }) => {
+const ColumnForm = (props) => {
   const [title, setTitle] = useState('');
   const [icon, setIcon] = useState('');
 
@@ -13,7 +13,7 @@ const ColumnForm = ({ listId }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    props.action({ title, icon });
     setTitle('');
     setIcon('');
   };

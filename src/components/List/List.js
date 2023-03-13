@@ -34,6 +34,18 @@ const List = () => {
       ],
     },
   ]);
+  const addCard = (newCard, columnId) => {
+    const columnsUpdated = columns.map((column) => {
+      if (column.id === columnId)
+        return {
+          ...column,
+          cards: [...column.cards, { id: shortid(), title: newCard.title }],
+        };
+      else return column;
+    });
+
+    setColumns(columnsUpdated);
+  };
 
   const addColumn = (newColumn) => {
     setColumns([
@@ -60,6 +72,7 @@ const List = () => {
       <section className={styles.columns}>
         {columns.map((column) => (
           <Column
+            action={addCard}
             key={column.id}
             id={column.id}
             title={column.title}
